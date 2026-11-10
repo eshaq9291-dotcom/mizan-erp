@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f2a4a;
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1 {
+  font-size: 42px;
+  color: #f5c518;
+}
+
+p {
+  font-size: 20px;
+}
+
+.card {
+  background: white;
+  color: #0f2a4a;
+  width: 400px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 15px;
+}
