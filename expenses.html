@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المصاريف والإيرادات - MIZAN ERP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>MIZAN ERP | مِيزَان</h1>
+  <p>حيث تتزن تجارتك</p>
+
+  <div class="card">
+    <h2>المصاريف والإيرادات</h2>
+    
+    <p>نوع العملية:</p>
+    <select id="expenseType" style="width:95%; padding:12px; font-size:16px; border-radius:8px;">
+      <option value="expense">مصروف (يخرج منك)</option>
+      <option value="income">إيراد (يدخل لك)</option>
+    </select>
+    
+    <p>الوصف:</p>
+    <input id="expenseDesc" type="text" placeholder="مثال: إيجار المحل / بيع خردة" style="width:90%; padding:12px; font-size:16px; border-radius:8px;">
+    
+    <p>المبلغ:</p>
+    <input id="expenseAmount" type="number" placeholder="مثال: 150000" style="width:90%; padding:12px; font-size:16px; border-radius:8px;">
+    
+    <br><br>
+    <button onclick="addExpense()" style="padding:12px 25px; font-size:18px; background:#0f2a4a; color:white; border:none; border-radius:8px; cursor:pointer; width:95%;">تسجيل العملية</button>
+    
+    <hr>
+    <p>إجمالي المصاريف: <b id="totalExpenses" style="color:red;">0 ريال</b></p>
+    <p>إجمالي الإيرادات: <b id="totalIncomes" style="color:green;">0 ريال</b></p>
+    <p>الصافي: <b id="netResult">0 ريال</b></p>
+    <div id="expenseList" style="text-align:right;"></div>
+    
+    <br>
+    <a href="dashboard.html" style="color:#0f2a4a;">العودة للوحة التحكم</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

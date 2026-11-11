@@ -145,3 +145,34 @@ function makePurchase() {
 
   alert("تم تسجيل الشراء! إجمالي المشتريات: " + totalPurchasesAmount);
 }
+let totalExpenses = 0;
+let totalIncomes = 0;
+
+function addExpense() {
+  let type = document.getElementById("expenseType").value;
+  let desc = document.getElementById("expenseDesc").value;
+  let amount = Number(document.getElementById("expenseAmount").value);
+
+  if (desc === "" || amount === "" || amount <= 0) {
+    alert("من فضلك اكتب الوصف والمبلغ بشكل صحيح");
+    return;
+  }
+
+  if (type === "expense") {
+    totalExpenses = totalExpenses + amount;
+    document.getElementById("expenseList").innerHTML += "<p>🔴 مصروف: " + desc + " - " + amount + " ريال</p>";
+  } else {
+    totalIncomes = totalIncomes + amount;
+    document.getElementById("expenseList").innerHTML += "<p>🟢 إيراد: " + desc + " - " + amount + " ريال</p>";
+  }
+
+  let net = totalIncomes - totalExpenses;
+  document.getElementById("totalExpenses").innerText = totalExpenses + " ريال";
+  document.getElementById("totalIncomes").innerText = totalIncomes + " ريال";
+  document.getElementById("netResult").innerText = net + " ريال";
+
+  document.getElementById("expenseDesc").value = "";
+  document.getElementById("expenseAmount").value = "";
+
+  alert("تم التسجيل بنجاح");
+}
