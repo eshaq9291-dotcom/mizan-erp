@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المورّدون - MIZAN ERP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>MIZAN ERP | مِيزَان</h1>
+  <p>حيث تتزن تجارتك</p>
+
+  <div class="card">
+    <h2>قائمة المورّدين</h2>
+    
+    <p>اسم المورّد:</p>
+    <input id="supplierName" type="text" placeholder="مثال: شركة النور للتجارة" style="width:90%; padding:12px; font-size:16px; border-radius:8px; border:1px solid #ccc;">
+    
+    <p>رقم الهاتف:</p>
+    <input id="supplierPhone" type="text" placeholder="مثال: 777999888" style="width:90%; padding:12px; font-size:16px; border-radius:8px; border:1px solid #ccc;">
+    
+    <p>المبلغ المستحق له:</p>
+    <input id="supplierDebt" type="number" placeholder="مثال: 200000" style="width:90%; padding:12px; font-size:16px; border-radius:8px; border:1px solid #ccc;">
+    
+    <br><br>
+    <button onclick="addSupplier()" style="padding:12px 25px; font-size:18px; background:#0f2a4a; color:white; border:none; border-radius:8px; cursor:pointer; width:95%;">إضافة مورّد</button>
+    
+    <hr>
+    <div id="supplierList" style="text-align:right;">
+      <p>لا يوجد مورّدون بعد</p>
+    </div>
+    
+    <br>
+    <a href="dashboard.html" style="color:#0f2a4a;">العودة للوحة التحكم</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

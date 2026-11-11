@@ -98,3 +98,29 @@ function addCustomer() {
 
   alert("تم إضافة العميل: " + name);
 }
+let suppliers = [];
+
+function addSupplier() {
+  let name = document.getElementById("supplierName").value;
+  let phone = document.getElementById("supplierPhone").value;
+  let debt = document.getElementById("supplierDebt").value;
+
+  if (name === "" || phone === "" || debt === "") {
+    alert("من فضلك املأ كل الحقول");
+    return;
+  }
+
+  suppliers.push(name + " - هاتف: " + phone + " - له: " + debt + " ريال");
+
+  let listHtml = "";
+  for (let i = 0; i < suppliers.length; i++) {
+    listHtml += "<p>🏭 " + suppliers[i] + "</p>";
+  }
+  document.getElementById("supplierList").innerHTML = listHtml;
+
+  document.getElementById("supplierName").value = "";
+  document.getElementById("supplierPhone").value = "";
+  document.getElementById("supplierDebt").value = "";
+
+  alert("تم إضافة المورّد: " + name);
+}
