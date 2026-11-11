@@ -176,3 +176,37 @@ function addExpense() {
 
   alert("تم التسجيل بنجاح");
 }
+let inventory = [];
+
+function addInventory() {
+  let product = document.getElementById("invProduct").value;
+  let warehouse = document.getElementById("invWarehouse").value;
+  let qty = Number(document.getElementById("invQty").value);
+  let alertLevel = Number(document.getElementById("invAlert").value);
+
+  if (product === "" || qty === "") {
+    alert("من فضلك اكتب اسم المنتج والكمية");
+    return;
+  }
+
+  let status = "✅ متوفر";
+  if (qty <= alertLevel) {
+    status = "⚠️ تنبيه: المخزون قليل، اطلب بضاعة جديدة!";
+  }
+  if (qty === 0) {
+    status = "🔴 نفد من المخزون!";
+  }
+
+  inventory.push(product + " | " + warehouse + " | الكمية: " + qty + " | " + status);
+
+  let listHtml = "";
+  for (let i = 0; i < inventory.length; i++) {
+    listHtml += "<p>" + inventory[i] + "</p>";
+  }
+  document.getElementById("inventoryList").innerHTML = listHtml;
+
+  document.getElementById("invProduct").value = "";
+  document.getElementById("invQty").value = "";
+
+  alert("تم إضافة المنتج للمخزون: " + product);
+}

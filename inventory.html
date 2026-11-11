@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المخزون - MIZAN ERP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>MIZAN ERP | مِيزَان</h1>
+  <p>حيث تتزن تجارتك</p>
+
+  <div class="card">
+    <h2>المخزون والمستودعات</h2>
+    
+    <p>اسم المنتج:</p>
+    <input id="invProduct" type="text" placeholder="مثال: أرز بسمتي" style="width:90%; padding:12px; font-size:16px; border-radius:8px;">
+    
+    <p>المستودع:</p>
+    <select id="invWarehouse" style="width:95%; padding:12px; font-size:16px; border-radius:8px;">
+      <option>المستودع الرئيسي - الحديدة</option>
+      <option>مستودع المحل</option>
+      <option>مستودع فرع صنعاء</option>
+    </select>
+    
+    <p>الكمية الحالية:</p>
+    <input id="invQty" type="number" placeholder="مثال: 50" style="width:90%; padding:12px; font-size:16px; border-radius:8px;">
+    
+    <p>حد التنبيه (إذا نزل المخزون تحته ينبهك):</p>
+    <input id="invAlert" type="number" value="10" style="width:90%; padding:12px; font-size:16px; border-radius:8px;">
+    
+    <br><br>
+    <button onclick="addInventory()" style="padding:12px 25px; font-size:18px; background:#0f2a4a; color:white; border:none; border-radius:8px; cursor:pointer; width:95%;">إضافة للمخزون</button>
+    
+    <hr>
+    <div id="inventoryList" style="text-align:right;">
+      <p>المخزون فارغ</p>
+    </div>
+    
+    <br>
+    <a href="dashboard.html" style="color:#0f2a4a;">العودة للوحة التحكم</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
