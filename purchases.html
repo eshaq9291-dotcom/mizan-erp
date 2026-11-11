@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المشتريات - MIZAN ERP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>MIZAN ERP | مِيزَان</h1>
+  <p>حيث تتزن تجارتك</p>
+
+  <div class="card">
+    <h2>شاشة الشراء من المورّد</h2>
+    
+    <p>اختر المورّد:</p>
+    <select id="purchaseSupplier" style="width:95%; padding:12px; font-size:16px; border-radius:8px;">
+      <option>شركة النور للتجارة</option>
+      <option>مؤسسة الأمل</option>
+    </select>
+    
+    <p>المنتج الذي تشتريه:</p>
+    <input id="purchaseProduct" type="text" placeholder="مثال: أرز بسمتي" style="width:90%; padding:12px; font-size:16px; border-radius:8px;">
+    
+    <p>الكمية:</p>
+    <input id="purchaseQty" type="number" value="1" style="width:90%; padding:12px; font-size:16px; border-radius:8px;">
+    
+    <p>سعر الشراء للوحدة:</p>
+    <input id="purchasePrice" type="number" placeholder="مثال: 8000" style="width:90%; padding:12px; font-size:16px; border-radius:8px;">
+    
+    <br><br>
+    <button onclick="makePurchase()" style="padding:12px 25px; font-size:18px; background:#0f2a4a; color:white; border:none; border-radius:8px; cursor:pointer; width:95%;">تسجيل عملية شراء</button>
+    
+    <hr>
+    <p>إجمالي المشتريات: <b id="purchaseTotal">0 ريال</b></p>
+    <div id="purchaseList" style="text-align:right;"></div>
+    
+    <br>
+    <a href="dashboard.html" style="color:#0f2a4a;">العودة للوحة التحكم</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

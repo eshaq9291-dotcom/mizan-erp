@@ -124,3 +124,24 @@ function addSupplier() {
 
   alert("تم إضافة المورّد: " + name);
 }
+let totalPurchasesAmount = 0;
+
+function makePurchase() {
+  let supplier = document.getElementById("purchaseSupplier").value;
+  let product = document.getElementById("purchaseProduct").value;
+  let qty = document.getElementById("purchaseQty").value;
+  let price = document.getElementById("purchasePrice").value;
+
+  if (product === "" || qty === "" || price === "") {
+    alert("من فضلك املأ المنتج والكمية والسعر");
+    return;
+  }
+
+  let total = qty * price;
+  totalPurchasesAmount = totalPurchasesAmount + total;
+
+  document.getElementById("purchaseTotal").innerText = totalPurchasesAmount + " ريال";
+  document.getElementById("purchaseList").innerHTML += "<p>📦 شراء: " + product + " من " + supplier + " × " + qty + " = " + total + " ريال</p>";
+
+  alert("تم تسجيل الشراء! إجمالي المشتريات: " + totalPurchasesAmount);
+}
