@@ -26,3 +26,29 @@ function addSaleDashboard() {
   document.getElementById("profit").innerText = profit + " ريال";
   alert("تم تسجيل بيع جديد، مبيعات اليوم أصبحت: " + dashboardSales);
 }
+let products = [];
+
+function addProduct() {
+  let name = document.getElementById("productName").value;
+  let price = document.getElementById("productPrice").value;
+  let qty = document.getElementById("productQty").value;
+
+  if (name === "" || price === "" || qty === "") {
+    alert("من فضلك املأ كل الحقول: الاسم والسعر والكمية");
+    return;
+  }
+
+  products.push(name + " - السعر: " + price + " - الكمية: " + qty);
+
+  let listHtml = "";
+  for (let i = 0; i < products.length; i++) {
+    listHtml += "<p>✅ " + products[i] + "</p>";
+  }
+  document.getElementById("productList").innerHTML = listHtml;
+
+  document.getElementById("productName").value = "";
+  document.getElementById("productPrice").value = "";
+  document.getElementById("productQty").value = "";
+
+  alert("تم إضافة المنتج: " + name);
+}
