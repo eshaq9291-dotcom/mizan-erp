@@ -72,3 +72,29 @@ function makeSale() {
 
   alert("تم البيع! إجمالي المبيعات الآن: " + totalSalesAmount);
 }
+let customers = [];
+
+function addCustomer() {
+  let name = document.getElementById("customerName").value;
+  let phone = document.getElementById("customerPhone").value;
+  let debt = document.getElementById("customerDebt").value;
+
+  if (name === "" || phone === "" || debt === "") {
+    alert("من فضلك املأ كل الحقول");
+    return;
+  }
+
+  customers.push(name + " - هاتف: " + phone + " - عليه: " + debt + " ريال");
+
+  let listHtml = "";
+  for (let i = 0; i < customers.length; i++) {
+    listHtml += "<p>👤 " + customers[i] + "</p>";
+  }
+  document.getElementById("customerList").innerHTML = listHtml;
+
+  document.getElementById("customerName").value = "";
+  document.getElementById("customerPhone").value = "";
+  document.getElementById("customerDebt").value = "";
+
+  alert("تم إضافة العميل: " + name);
+}
