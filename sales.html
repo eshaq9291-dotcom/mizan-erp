@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المبيعات - MIZAN ERP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>MIZAN ERP | مِيزَان</h1>
+  <p>حيث تتزن تجارتك</p>
+
+  <div class="card">
+    <h2>شاشة البيع السريع</h2>
+    
+    <p>اختر المنتج:</p>
+    <select id="saleProduct" style="width:95%; padding:12px; font-size:16px; border-radius:8px;">
+      <option value="10000">أرز بسمتي - 10000 ريال</option>
+      <option value="8000">سكر - 8000 ريال</option>
+    </select>
+    
+    <p>الكمية:</p>
+    <input id="saleQty" type="number" value="1" style="width:90%; padding:12px; font-size:16px; border-radius:8px;">
+    
+    <br><br>
+    <button onclick="makeSale()" style="padding:12px 25px; font-size:18px; background:#0f2a4a; color:white; border:none; border-radius:8px; cursor:pointer; width:95%;">بيع الآن</button>
+    
+    <hr>
+    <p>إجمالي الفاتورة: <b id="saleTotal">0 ريال</b></p>
+    <div id="saleList" style="text-align:right;"></div>
+    
+    <br>
+    <a href="dashboard.html" style="color:#0f2a4a;">العودة للوحة التحكم</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

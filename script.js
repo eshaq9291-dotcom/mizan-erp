@@ -52,3 +52,23 @@ function addProduct() {
 
   alert("تم إضافة المنتج: " + name);
 }
+let totalSalesAmount = 0;
+
+function makeSale() {
+  let price = document.getElementById("saleProduct").value;
+  let qty = document.getElementById("saleQty").value;
+  let productName = document.getElementById("saleProduct").options[document.getElementById("saleProduct").selectedIndex].text;
+
+  if (qty === "" || qty <= 0) {
+    alert("من فضلك اكتب كمية صحيحة");
+    return;
+  }
+
+  let total = price * qty;
+  totalSalesAmount = totalSalesAmount + total;
+
+  document.getElementById("saleTotal").innerText = totalSalesAmount + " ريال";
+  document.getElementById("saleList").innerHTML += "<p>✅ بيع: " + productName + " × " + qty + " = " + total + " ريال</p>";
+
+  alert("تم البيع! إجمالي المبيعات الآن: " + totalSalesAmount);
+}
