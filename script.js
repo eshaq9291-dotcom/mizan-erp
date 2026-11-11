@@ -210,3 +210,66 @@ function addInventory() {
 
   alert("تم إضافة المنتج للمخزون: " + product);
 }
+function showReport() {
+  // في النسخة التعليمية نستخدم أرقام تجريبية من المتغيرات التي سجلناها
+  // في النسخة الحقيقية سنقرأها من قاعدة البيانات
+
+  let sales = totalSalesAmount || 0;
+  let purchases = totalPurchasesAmount || 0;
+  let expenses = totalExpenses || 0;
+  let incomes = totalIncomes || 0;
+
+  // إذا كانت كلها صفر (لأن الصفحة جديدة)، نعرض مثالاً تعليمياً
+  if (sales === 0 && purchases === 0 && expenses === 0) {
+    sales = 44000;
+    purchases = 800000;
+    expenses = 150000;
+    incomes = 20000;
+  }
+
+  let profit = (sales + incomes) - (purchases + expenses);
+
+  document.getElementById("repSales").innerText = sales + " ريال";
+  document.getElementById("repPurchases").innerText = purchases + " ريال";
+  document.getElementById("repExpenses").innerText = expenses + " ريال";
+  document.getElementById("repIncomes").innerText = incomes + " ريال";
+  document.getElementById("repProfit").innerText = profit + " ريال";
+
+  if (profit >= 0) {
+    document.getElementById("repMessage").innerText = "✅ اليوم رابح، استمر!";
+    document.getElementById("repProfit").style.color = "green";
+  } else {
+    document.getElementById("repMessage").innerText = "⚠️ اليوم خاسر، راجع مصاريفك ومشترياتك!";
+    document.getElementById("repProfit").style.color = "red";
+  }
+
+  alert("تم تحديث التقرير!");
+}
+function saveSettings() {
+  let company = document.getElementById("companyName").value;
+  let currency = document.getElementById("companyCurrency").value;
+  alert("تم حفظ إعدادات الشركة: " + company + " - العملة: " + currency);
+}
+
+let users = ["المدير العام - مدير"];
+
+function addUser() {
+  let name = document.getElementById("newUserName").value;
+  let role = document.getElementById("newUserRole").value;
+
+  if (name === "") {
+    alert("من فضلك اكتب اسم المستخدم");
+    return;
+  }
+
+  users.push(name + " - " + role);
+
+  let listHtml = "<p>المستخدمون الحاليون:</p>";
+  for (let i = 0; i < users.length; i++) {
+    listHtml += "<p>👤 " + users[i] + "</p>";
+  }
+  document.getElementById("userList").innerHTML = listHtml;
+  document.getElementById("newUserName").value = "";
+
+  alert("تم إضافة المستخدم: " + name + " بصلاحية: " + role);
+}
